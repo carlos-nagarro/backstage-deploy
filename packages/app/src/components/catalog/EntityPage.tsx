@@ -54,6 +54,8 @@ import {
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
 
+import { EntityGithubActionsContent, isGithubActionsAvailable } from '@backstage-community/plugin-github-actions'
+
 const techdocsContent = (
   <EntityTechdocsContent>
     <TechDocsAddons>
@@ -174,6 +176,10 @@ const serviceEntityPage = (
 
     <EntityLayout.Route path="/docs" title="Docs">
       {techdocsContent}
+    </EntityLayout.Route>
+
+    <EntityLayout.Route path="/github-actions" title="GitHub Actions">
+      <EntityGithubActionsContent />
     </EntityLayout.Route>
   </EntityLayout>
 );
